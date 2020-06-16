@@ -1,25 +1,12 @@
-//notes
-//two variable to declare
-//conditional within the loop to check what to keep
-//return largest product
+//make placeholder for area set equal to 1 init.
+//iterate through the input n
+// get area by adding existing area plus i multiplied by 4 subtracted by 4 to account for duplicate sides
+//return area when iteration is done
 
-//pseudocode
-//define a placeholder for the initialProduct and calcProduct
-// go through each number in the array until the length - 2
-// compare products and take whichever is bigger
-
-function adjacentElementsProduct(inputArray) {
-  let initialProduct = inputArray[0] * inputArray[1];
-  let calcProduct;
-  for (let i = 0; i <= inputArray.length - 2; i++) {
-    if (i > 0) {
-      initialProduct = calcProduct
-    }
-    calcProduct = inputArray[i] * inputArray[i + 1]
-    if (initialProduct >= calcProduct) {
-      calcProduct = initialProduct
-    }
-    if (i === inputArray.length - 2) return calcProduct
-
+function shapeArea(n) {
+  let area = 1
+  for (let i = 1; i <= n; i++) {
+    area = area + i * 4 - 4;
   }
+  return area
 }
