@@ -18,7 +18,7 @@ Ratiorg needs statues of sizes `4, 5 and 7`.
 
 An array of distinct non-negative integers.
 
-__Guaranteed constraints:__
+_Guaranteed constraints:_
 `1 ≤ statues.length ≤ 10`,
 `0 ≤ statues[i] ≤ 20`.
 
