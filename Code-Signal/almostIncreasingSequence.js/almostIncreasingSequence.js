@@ -4,6 +4,8 @@
 // if counter is greater than 1, return false, else return true
 //no repeats
 
+//check to see if you can pop current index off
+
 
 
 //pseudocode
@@ -21,42 +23,48 @@ function almostIncreasingSequence(sequence) {
 
 
 
-  for (let i = 1; i < sequence.length; i++) {
+  for (let i = 0; i < sequence.length - 1; i++) {
 
-    if (sequence[i] < sequence[i - 1]) {
+    if (sequence[i] > sequence[i + 1]) {
       counter = counter + 1;
     }
   }
   console.log(counter)
 
-  let currentValue;
-
-  for (let i = 0; i < sequence.length; i++) {
-    currentValue = sequence[i]
-    for (let j = i + 1; j < sequence.length; j++) {
-      if (currentValue === sequence[j]) {
-        duplicateCheck = true
-      }
-    }
-  }
-
-  if (counter > 1) {
-    for (let i = 0; i < sequence.length - 1; i++) {
-
-      if (sequence[i] > sequence[i + 1]) {
-        minimumCounter = minimumCounter + 1
-      }
-    }
-
-  }
-  console.log(minimumCounter)
-
-  console.log(duplicateCheck)
-
-  if (counter > 1 || duplicateCheck || minimumCounter > 0) {
-    return false
-  } else {
+  if (counter < 2) {
     return true
+  } else {
+    return false
   }
+
+  // let currentValue;
+
+  // for (let i = 0; i < sequence.length; i++ ){
+  //     currentValue = sequence[i]
+  //     for (let j = i + 1; j < sequence.length; j++){
+  //         if (currentValue === sequence[j]){
+  //             duplicateCheck = true
+  //         }
+  //     }
+  // }
+
+  // if (counter > 1){
+  // for (let i = 0; i <  sequence.length-1; i++){
+
+  //   if (sequence[i] > sequence[i + 1]){
+  //         minimumCounter = minimumCounter + 1
+  //     }
+  // }
+
+  // }
+  // console.log(minimumCounter)
+
+  // console.log(duplicateCheck)
+
+  // if (counter > 1 || duplicateCheck || minimumCounter > 0) {
+  //     return false
+  // } else {
+  //     return true
+  // }
 
 }
