@@ -36,7 +36,7 @@ Note that the free room in the final column makes the full column unsuitable for
 * [execution time limit] 4 seconds (js)
 
 * **[input] array.array.integer matrix**
-__Guaranteed constraints:__
+* __Guaranteed constraints:__
 `1 ≤ matrix.length ≤ 5,`
 `1 ≤ matrix[i].length ≤ 5,`
 `0 ≤ matrix[i][j] ≤ 10.`
