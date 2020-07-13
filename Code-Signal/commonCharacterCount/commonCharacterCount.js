@@ -6,23 +6,25 @@
 
 
 //pseudocode
-//1. create a placeholder for the number of common characters and longer and shorter strings
-//2. determine which is the longer string and which is the shorter string
-//2a. assign values to each placeholder for shorter and longer string
-//3. create an empty object to map each string character of longer string to object
-//3a. map through longer string
-//4. compare short string indices against object key values
+//1. create a placeholder for the number of common characters and make an array for each string with each index as each character of the string
+//2. create a hashmap Map object to keep track
+//3. go through each index of first array and map each character to a key in the hash, increment by 1 for duplicate characters
+//4. go through each index of second array and chech if hash has character and if character is greater than 0, if so, deduct character in hash and increment characterCount var
+//5. return characterCount
 
 
 function commonCharacterCount(s1, s2) {
   let characterCount = 0
-  let hash = new Map();
 
   let s1Array = s1.split("");
   let s2Array = s2.split("")
 
+  let hash = new Map();
+
   for (let character of s1Array) {
-    hash.has(characterCount) ? hash.set(character, hash.get(character) + 1) : hash.set(character, 1)
+    hash.has(character) ? hash.set(character, hash.get(character) + 1) : hash.set(character, 1)
+
+    console.log(hash)
   }
 
   for (let character of s2Array) {
@@ -68,6 +70,3 @@ function commonCharacterCount(s1, s2) {
   // return characterCount
 
 }
-
-
-//trace
