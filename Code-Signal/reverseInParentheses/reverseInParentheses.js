@@ -20,18 +20,30 @@
 
 
 function reverseInParentheses(inputString) {
-  let returnString = '';
-  let leftIndex = 0;
-  let rightIndex = 0;
-  const inputArray = []
-  const leftBracketArray = [];
-  const rightBracketArray = [];
-
-  for (let i = 0; i < inputString.length; i++) {
-    if (inputString[i] === '(') {
-      leftBracketArray.push(i)
-    }
+  let start = -1;
+  while ((start = inputString.lastIndexOf("(")) !== -1) {
+    let end = inputString.indexOf(")", start);
+    let sub = inputString.substring(start + 1, end);
+    let reverse = sub.split("").reverse().join("");
+    inputString = inputString.replace((`${sub}`), reverse)
   }
-
-
+  return inputString
 }
+
+
+
+
+
+//attempt without array methods
+// let returnString = '';
+// let leftIndex = 0;
+// let rightIndex = 0;
+// const inputArray = []
+// const leftBracketArray = [];
+// const rightBracketArray = [];
+
+// for (let i = 0; i < inputString.length; i++){
+//     if (inputString[i] === '(') {
+//         leftBracketArray.push(i)
+//     }
+// }
