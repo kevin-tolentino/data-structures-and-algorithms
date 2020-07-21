@@ -20,14 +20,24 @@
 
 
 function reverseInParentheses(inputString) {
-  let start = -1;
-  while ((start = inputString.lastIndexOf("(")) !== -1) {
-    let end = inputString.indexOf(")", start);
-    let sub = inputString.substring(start + 1, end);
-    let reverse = sub.split("").reverse().join("");
-    inputString = inputString.replace((`${sub}`), reverse)
+  while (true) {
+    let rightBracket = inputString.indexOf(")");
+
+    if (rightBracket === -1) {
+      break;
+    }
+
+    let leftBracket = inputString.substring(0, rightBracket).lastIndexOf("(");
+
+    let start = inputString.substring(0, leftBracket);
+    let middle = inputString.substring(leftBracket + 1, rightBracket).split("").reverse().join("");
+    let end = inputString.substring(rightBracket + 1, inputString.length);
+
+    inputString = start + middle + end;
+    console.log(start, middle, end)
   }
-  return inputString
+
+  return inputString;
 }
 
 
